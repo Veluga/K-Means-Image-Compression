@@ -1,4 +1,4 @@
 function [centroids] = initializeCentroids(X, K)
-    shuffledX = X(randperm(size(X,1)),:,:);
-    centroids = shuffledX(1:K, :, :);
+    shuffled_X = X(randperm(size(X,1)),:);
+    centroids = shuffled_X(1:K, :);
 end
