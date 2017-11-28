@@ -1,7 +1,8 @@
 %load image from source / initialize variables
-X = double(imread('rainbow.jpg'));
+img_src = 'balloons.jpg';
+X = double(imread(img_src));
 original = X;
-K = 64;
+K = 32;
 max_iteration = 10;
 
 %Reshape X to an n x 3 (pixels x rgb values) matrix
@@ -22,4 +23,9 @@ final_image = reshape(final_image_vector, size_X(1), size_X(2), 3);
 
 %display image
 subplot(1,2,1), subimage(uint8(original));
+title('Original, uncompressed');
 subplot(1,2,2), subimage(uint8(final_image));
+title('Compressed');
+
+output = ['compressed_' img_src];
+imwrite(uint8(final_image),output);
