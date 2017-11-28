@@ -8,4 +8,6 @@ for i = 1:max_iterations
     centroids = updateCentroidPosition(centroids, X, indeces);
 end
 
+final_centroids = centroids;
+
 end
